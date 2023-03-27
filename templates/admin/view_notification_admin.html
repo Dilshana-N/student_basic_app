@@ -1,0 +1,33 @@
+{% extends "admin/adminbase.html" %}
+{% block content %}
+
+
+<div class="card" style="width: 74rem;">
+  <div class="card-body">
+      <h3 class="card-title"><center><u>View Notification</u></center></h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">SL</th>
+      <th scope="col">NOTIFICATION</th>
+      <th scope="col">DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for i in data %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+        <td>{{i.notifications}}</td>
+         <td>{{i.date}}</td>
+<!--      <td>{{i.reply}}</td>-->
+
+
+    </tr>
+{% endfor %}
+  </tbody>
+  </table>
+
+{% endblock %}
+        </div>
+</div>

@@ -1,0 +1,50 @@
+{% extends "student/studentbase.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<div class="card" style="width: 74rem;">
+  <div class="card-body">
+    <h3 class="card-title"><center><u>Student's Data</u></center></h3>
+
+
+
+
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">SL</th>
+      <th scope="col">ROLL_NO</th>
+
+      <th scope="col">NAME</th>
+      <th scope="col">COLLEGE_NAME</th>
+
+      <th scope="col">EMAIL</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for i in data %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.roll_no}}</td>
+
+      <td>{{i.name}}</td>
+      <td>{{i.college_name}}</td>
+
+      <td>{{i.email}}</td>
+
+<!--            <td>{{i.profilepic}}</td>-->
+      <td><img src="{{i.profile_pic.url }}" style="width:100px"></td>
+
+    </tr>
+{% endfor %}
+  </tbody>
+  </table>
+
+
+
+{% endblock %}
+
+
+  </div>
+</div>
